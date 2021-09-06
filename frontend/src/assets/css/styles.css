@@ -8,6 +8,10 @@ html, body {
     font-family: "Ubuntu", sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 #root {
     display: flex;
     flex-direction: column;
