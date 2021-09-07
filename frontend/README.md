@@ -1,8 +1,10 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/99541da7-19c5-4f83-b441-c5fbaff5ed75/deploy-status)](https://app.netlify.com/sites/salesanalysis/deploys)
 
-# Getting Started with Create React App
+# This project was created at 'Semana Spring React' - SDS4
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You can see the website published at https://salesanalysis.netlify.app/
+
+This app was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

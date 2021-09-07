@@ -14,10 +14,108 @@ const DataTable = () => {
                 <tbody>
                     <tr>
                         <td>04/21/2021</td>
-                        <td>Barry Allen</td>
-                        <td>34</td>
+                        <td>Anakin</td>
+                        <td>45</td>
                         <td>25</td>
                         <td>15017.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/04/2021</td>
+                        <td>Barry Allen</td>
+                        <td>34</td>
+                        <td>20</td>
+                        <td>17000.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/17/2021</td>
+                        <td>Kal-el</td>
+                        <td>47</td>
+                        <td>40</td>
+                        <td>25099.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/15/2021</td>
+                        <td>Logan</td>
+                        <td>60</td>
+                        <td>29</td>
+                        <td>39000.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/30/2021</td>
+                        <td>Padmé</td>
+                        <td>52</td>
+                        <td>44</td>
+                        <td>40060.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/21/2021</td>
+                        <td>Anakin</td>
+                        <td>45</td>
+                        <td>25</td>
+                        <td>15017.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/04/2021</td>
+                        <td>Barry Allen</td>
+                        <td>34</td>
+                        <td>20</td>
+                        <td>17000.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/17/2021</td>
+                        <td>Kal-el</td>
+                        <td>47</td>
+                        <td>40</td>
+                        <td>25099.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/15/2021</td>
+                        <td>Logan</td>
+                        <td>60</td>
+                        <td>29</td>
+                        <td>39000.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/30/2021</td>
+                        <td>Padmé</td>
+                        <td>52</td>
+                        <td>44</td>
+                        <td>40060.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/21/2021</td>
+                        <td>Anakin</td>
+                        <td>45</td>
+                        <td>25</td>
+                        <td>15017.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/04/2021</td>
+                        <td>Barry Allen</td>
+                        <td>34</td>
+                        <td>20</td>
+                        <td>17000.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/17/2021</td>
+                        <td>Kal-el</td>
+                        <td>47</td>
+                        <td>40</td>
+                        <td>25099.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/15/2021</td>
+                        <td>Logan</td>
+                        <td>60</td>
+                        <td>29</td>
+                        <td>39000.00</td>
+                    </tr>
+                    <tr>
+                        <td>04/30/2021</td>
+                        <td>Padmé</td>
+                        <td>52</td>
+                        <td>44</td>
+                        <td>40060.00</td>
                     </tr>
                 </tbody>
             </table>
