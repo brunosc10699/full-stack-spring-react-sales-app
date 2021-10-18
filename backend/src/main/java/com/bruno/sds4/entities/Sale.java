@@ -15,8 +15,6 @@ import java.time.LocalDate;
 @Builder
 public class Sale implements Serializable {
 
-    @EqualsAndHashCode.Exclude
-    @ToString.Exclude
     private static final long serialVersionUID = 1L;
 
     @Id

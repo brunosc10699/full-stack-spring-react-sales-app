@@ -15,8 +15,6 @@ import java.util.List;
 @Builder
 public class Seller implements Serializable {
 
-    @EqualsAndHashCode.Exclude
-    @ToString.Exclude
     private static final long serialVersionUID = 1L;
 
     @Id
