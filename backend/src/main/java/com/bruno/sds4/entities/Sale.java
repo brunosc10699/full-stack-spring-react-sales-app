@@ -1,5 +1,6 @@
 package com.bruno.sds4.entities;
 
+import com.bruno.sds4.dto.SellerDTO;
 import lombok.*;
 
 import javax.persistence.*;
