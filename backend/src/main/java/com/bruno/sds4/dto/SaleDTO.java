@@ -7,10 +7,9 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
+@Data
 @Builder
 public class SaleDTO implements Serializable {
 
@@ -18,19 +17,30 @@ public class SaleDTO implements Serializable {
 
     private String id;
 
+    @EqualsAndHashCode.Exclude
     private Integer visited;
+
+    @EqualsAndHashCode.Exclude
     private Integer deals;
+
+    @EqualsAndHashCode.Exclude
     private BigDecimal amount;
+
+    @EqualsAndHashCode.Exclude
     private LocalDate date;
+
+    @EqualsAndHashCode.Exclude
     private String seller;
 
-    public SaleDTO(Sale sale){
-        id = sale.getId();
-        visited = sale.getVisited();
-        deals = sale.getDeals();
-        amount = sale.getAmount();
-        date = sale.getDate();
-        seller = sale.getSeller().getName();
+    public static SaleDTO toDTO(Sale sale){
+        return SaleDTO.builder()
+        .id(sale.getId())
+        .visited(sale.getVisited())
+        .deals(sale.getDeals())
+        .amount(sale.getAmount())
+        .date(sale.getDate())
+        .seller(sale.getSeller().getName())
+        .build();
     }
 }
 

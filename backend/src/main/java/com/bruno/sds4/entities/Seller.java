@@ -1,6 +1,9 @@
 package com.bruno.sds4.entities;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -23,6 +26,7 @@ public class Seller implements Serializable {
     @Column(nullable = false)
     private String name;
 
+    @Builder.Default
     @OneToMany(mappedBy = "seller")
     private List<Sale> sales = new ArrayList<>();
 }
