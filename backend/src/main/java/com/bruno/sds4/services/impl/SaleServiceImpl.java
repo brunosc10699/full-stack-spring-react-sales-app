@@ -21,6 +21,7 @@ public class SaleServiceImpl implements SaleService {
     @Override
     @Transactional(readOnly = true)
     public Page<SaleDTO> findAll(Pageable pageable){
+        sellerRepository.findAll();
         return saleRepository.findAll(pageable).map(SaleDTO::toDTO);
     }
 }

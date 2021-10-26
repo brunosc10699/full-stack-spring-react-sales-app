@@ -18,6 +18,7 @@ public class SellerServiceImpl implements SellerService {
     @Override
     @Transactional(readOnly = true)
     public Page<SellerDTO> findAll(Pageable pageable){
+
         return sellerRepository.findAll(pageable).map(SellerDTO::toDTO);
     }
 }

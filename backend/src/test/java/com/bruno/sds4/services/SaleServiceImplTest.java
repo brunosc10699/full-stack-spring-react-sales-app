@@ -4,6 +4,7 @@ import com.bruno.sds4.dto.SaleDTO;
 import com.bruno.sds4.entities.Sale;
 import com.bruno.sds4.entities.Seller;
 import com.bruno.sds4.repositories.SaleRepository;
+import com.bruno.sds4.repositories.SellerRepository;
 import com.bruno.sds4.services.impl.SaleServiceImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,7 @@ import java.util.Collections;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -28,6 +30,9 @@ public class SaleServiceImplTest {
 
     @Mock
     private SaleRepository saleRepository;
+
+    @Mock
+    private SellerRepository sellerRepository;
 
     @InjectMocks
     private SaleServiceImpl saleService;

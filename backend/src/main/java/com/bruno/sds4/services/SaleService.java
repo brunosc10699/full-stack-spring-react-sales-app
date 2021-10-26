@@ -7,4 +7,6 @@ import org.springframework.data.domain.Pageable;
 public interface SaleService {
 
     Page<SaleDTO> findAll(Pageable pageable);
+
+
 }
