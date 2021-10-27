@@ -1,6 +1,7 @@
 package com.bruno.sds4.resources;
 
 import com.bruno.sds4.dto.SaleDTO;
+import com.bruno.sds4.dto.SaleSumDTO;
 import com.bruno.sds4.entities.Sale;
 import com.bruno.sds4.entities.Seller;
 import com.bruno.sds4.services.impl.SaleServiceImpl;
@@ -14,7 +15,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -74,6 +74,16 @@ public class SaleResourceTest {
         when(saleService.findAll(pageRequest)).thenReturn(pageSaleDTO);
         mockMvc.perform(MockMvcRequestBuilders.get(URN)
                 .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    @DisplayName("(2) When amountGroupedBySeller() is called then return 200 OK status")
+    void whenAmountGroupedBySellerIsCalledThenReturn200OkStatus() throws Exception {
+        SaleSumDTO saleSumDTO = new SaleSumDTO(seller, BigDecimal.valueOf(100000.0));
+        when(saleService.amountGroupedBySeller()).thenReturn(Collections.singletonList(saleSumDTO));
+        mockMvc.perform(MockMvcRequestBuilders.get(URN + "byseller")
+        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 }

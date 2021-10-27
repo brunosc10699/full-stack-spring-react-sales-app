@@ -21,4 +21,5 @@ public class SellerResource {
     public ResponseEntity<Page<SellerDTO>> findAll(Pageable pageable){
         return ResponseEntity.ok(sellerService.findAll(pageable));
     }
+
 }
