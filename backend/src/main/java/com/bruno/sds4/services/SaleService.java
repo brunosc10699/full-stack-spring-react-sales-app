@@ -2,6 +2,7 @@ package com.bruno.sds4.services;
 
 import com.bruno.sds4.dto.SaleDTO;
 import com.bruno.sds4.dto.SaleSumDTO;
+import com.bruno.sds4.dto.SuccessRateDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -13,4 +14,5 @@ public interface SaleService {
 
     List<SaleSumDTO> amountGroupedBySeller();
 
+    List<SuccessRateDTO> successRateGroupedBySeller();
 }

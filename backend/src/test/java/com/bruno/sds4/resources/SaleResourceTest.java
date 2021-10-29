@@ -2,6 +2,7 @@ package com.bruno.sds4.resources;
 
 import com.bruno.sds4.dto.SaleDTO;
 import com.bruno.sds4.dto.SaleSumDTO;
+import com.bruno.sds4.dto.SuccessRateDTO;
 import com.bruno.sds4.entities.Sale;
 import com.bruno.sds4.entities.Seller;
 import com.bruno.sds4.services.impl.SaleServiceImpl;
@@ -82,8 +83,18 @@ public class SaleResourceTest {
     void whenAmountGroupedBySellerIsCalledThenReturn200OkStatus() throws Exception {
         SaleSumDTO saleSumDTO = new SaleSumDTO(seller, BigDecimal.valueOf(100000.0));
         when(saleService.amountGroupedBySeller()).thenReturn(Collections.singletonList(saleSumDTO));
-        mockMvc.perform(MockMvcRequestBuilders.get(URN + "byseller")
+        mockMvc.perform(MockMvcRequestBuilders.get(URN + "by-seller")
         .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    @DisplayName("(3) When successRateGroupedBySeller() is called then return 200 Ok status")
+    void whenSuccessRateGroupedBySellerIsCalledThenReturn200OkStatus() throws Exception {
+        SuccessRateDTO successRateDTO = new SuccessRateDTO(seller, 800L, 1000L);
+        when(saleService.successRateGroupedBySeller()).thenReturn(Collections.singletonList(successRateDTO));
+        mockMvc.perform(MockMvcRequestBuilders.get(URN + "success-rate")
+                .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 }

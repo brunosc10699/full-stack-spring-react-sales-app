@@ -2,6 +2,7 @@ package com.bruno.sds4.resources;
 
 import com.bruno.sds4.dto.SaleDTO;
 import com.bruno.sds4.dto.SaleSumDTO;
+import com.bruno.sds4.dto.SuccessRateDTO;
 import com.bruno.sds4.services.SaleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -21,13 +22,18 @@ public class SaleResource {
     private final SaleService saleService;
 
     @GetMapping
-    public ResponseEntity<Page<SaleDTO>> findAll(Pageable pageable){
+    public ResponseEntity<Page<SaleDTO>> findAll(Pageable pageable) {
         return ResponseEntity.ok(saleService.findAll(pageable));
     }
 
-    @GetMapping(value = "/byseller")
-    public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller(){
+    @GetMapping(value = "/by-seller")
+    public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller() {
         return ResponseEntity.ok(saleService.amountGroupedBySeller());
+    }
+
+    @GetMapping(value = "/success-rate")
+    public ResponseEntity<List<SuccessRateDTO>> successGroupedBySeller() {
+        return ResponseEntity.ok(saleService.successRateGroupedBySeller());
     }
 
 }

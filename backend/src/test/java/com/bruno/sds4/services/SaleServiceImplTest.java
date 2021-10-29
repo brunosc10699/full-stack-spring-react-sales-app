@@ -2,6 +2,7 @@ package com.bruno.sds4.services;
 
 import com.bruno.sds4.dto.SaleDTO;
 import com.bruno.sds4.dto.SaleSumDTO;
+import com.bruno.sds4.dto.SuccessRateDTO;
 import com.bruno.sds4.entities.Sale;
 import com.bruno.sds4.entities.Seller;
 import com.bruno.sds4.repositories.SaleRepository;
@@ -82,14 +83,28 @@ public class SaleServiceImplTest {
     }
 
     @Test
-    @DisplayName("(3) When amountGroupedBySeller is called then return a list of sellers")
-    void whenAmountGroupedBySellerIsCalledThenReturnAListOfSellers() {
+    @DisplayName("(3) When amountGroupedBySeller() is called then return a list")
+    void whenAmountGroupedBySellerIsCalledThenReturnAList() {
         SaleSumDTO saleSumDTO = new SaleSumDTO(seller, sale.getAmount());
         when(saleRepository.amountGroupedBySeller()).thenReturn(Collections.singletonList(saleSumDTO));
         List<SaleSumDTO> report = saleService.amountGroupedBySeller();
         assertAll(
                 () -> assertThat(report.get(0).getAmount(), is(equalTo(BigDecimal.valueOf(100000.0)))),
                 () -> assertThat(report.get(0).getSellerName(), is(equalTo("Karl")))
+        );
+    }
+
+    @Test
+    @DisplayName("(4) When successRateGroupedBySeller() is called then return a list")
+    void whenSuccessRateGroupedBySellerIsCalledThenReturnAList() {
+        SuccessRateDTO successRateDTO = new SuccessRateDTO(seller, 800L, 1000L);
+        when(saleRepository.successRateGroupedBySeller()).thenReturn(Collections.singletonList(successRateDTO));
+        List<SuccessRateDTO> list = saleService.successRateGroupedBySeller();
+        assertAll(
+                () -> assertThat(list, is(not(empty()))),
+                () -> assertThat(list.get(0).getSellerName(), is(equalTo(successRateDTO.getSellerName()))),
+                () -> assertThat(list.get(0).getDeals(), is(equalTo(successRateDTO.getDeals()))),
+                () -> assertThat(list.get(0).getVisited(), is(equalTo(successRateDTO.getVisited())))
         );
     }
 }

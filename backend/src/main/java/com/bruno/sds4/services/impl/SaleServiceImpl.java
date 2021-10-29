@@ -2,6 +2,7 @@ package com.bruno.sds4.services.impl;
 
 import com.bruno.sds4.dto.SaleDTO;
 import com.bruno.sds4.dto.SaleSumDTO;
+import com.bruno.sds4.dto.SuccessRateDTO;
 import com.bruno.sds4.repositories.SaleRepository;
 import com.bruno.sds4.repositories.SellerRepository;
 import com.bruno.sds4.services.SaleService;
@@ -32,5 +33,11 @@ public class SaleServiceImpl implements SaleService {
     @Override
     public List<SaleSumDTO> amountGroupedBySeller() {
         return saleRepository.amountGroupedBySeller();
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<SuccessRateDTO> successRateGroupedBySeller() {
+        return saleRepository.successRateGroupedBySeller();
     }
 }
